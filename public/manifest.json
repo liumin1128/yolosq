@@ -4,8 +4,8 @@
   "description": "YoloSQ",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#ff0",
-  "theme_color": "#007bff",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "./favicon.ico",
