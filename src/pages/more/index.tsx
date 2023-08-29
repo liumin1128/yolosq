@@ -4,6 +4,10 @@ import Button from '@mui/material/Button';
 const Home: React.FunctionComponent = () => {
   return (
     <div>
+      more
+      <br />
+      <br />
+      <br />
       <Button
         onClick={() => {
           navigator.serviceWorker.register('sw.js').then((registration) => {
@@ -15,6 +19,7 @@ const Home: React.FunctionComponent = () => {
       >
         register serviceWorker
       </Button>
+      <br />
       <Button
         onClick={() => {
           console.log(navigator.serviceWorker.controller);
