@@ -3,9 +3,10 @@ self.addEventListener('message', function (event) {
   console.log(event);
   var data = event.data;
   if (data.command == 'oneWayCommunication') {
-    self.registration.showNotification(data.message);
-
     console.log('Message from the Page : ', data.message);
+    setTimeout(() => {
+      self.registration.showNotification(data.message);
+    }, 3000);
   }
 });
 
