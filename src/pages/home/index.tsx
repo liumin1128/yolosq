@@ -23,16 +23,30 @@ const Home: React.FunctionComponent = () => {
     <div>
       <Button
         onClick={() => {
-          alert(window.Notification.permission);
-          console.log('requestPermission');
-          Notification.requestPermission();
-          setInterval(() => {
-            console.log('setTimeout');
-            new Notification('提示', { body: 'test' });
-          }, 3000);
+          navigator.serviceWorker.register('sw.js').then((registration) => {
+            Notification.requestPermission().then((status) => {
+              //   if (status === 'granted') {
+              //     registration.showNotification('title');
+              //   }
+            });
+          });
         }}
       >
-        Notification
+        register serviceWorker
+      </Button>
+      <Button
+        onClick={() => {
+          const customEvent = new CustomEvent('test1', {
+            bubbles: true,
+            cancelable: true,
+            detail: {
+              message: 'This is a custom event',
+            },
+          });
+          navigator.serviceWorker.dispatchEvent(customEvent);
+        }}
+      >
+        Sent Notification
       </Button>
       <Tabs
         options={[
