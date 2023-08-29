@@ -3,6 +3,7 @@ import Typography from '@mui/material/Typography';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import Card from '@mui/material/Card';
 import Tabs from '@/components/Tabs';
@@ -12,8 +13,27 @@ import MarketingAirlineCodeSQIcon from '@/components/FlightCard/sq.svg';
 import MarketingAirlineCodeScootIcon from '@/components/FlightCard/scoot.svg';
 
 const Home: React.FunctionComponent = () => {
+  console.log('x x x');
+  console.log('x x x');
+  console.log('x x x');
+  console.log('x x x');
+  console.log('x x x');
+
   return (
     <div>
+      <Button
+        onClick={() => {
+          alert(window.Notification.permission);
+          console.log('requestPermission');
+          Notification.requestPermission();
+          setInterval(() => {
+            console.log('setTimeout');
+            new Notification('提示', { body: 'test' });
+          }, 3000);
+        }}
+      >
+        Notification
+      </Button>
       <Tabs
         options={[
           { key: ' Singapore Airlines', label: ' Singapore Airlines' },
