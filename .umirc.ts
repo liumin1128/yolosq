@@ -8,4 +8,10 @@ export default {
   history: { type: 'hash' },
   favicons: ['/favicon/4.svg', '/favicon/4.ico'],
   esbuildMinifyIIFE: true,
+  links: [
+    {
+      rel: 'manifest',
+      href: '/manifest.json',
+    },
+  ],
 };
