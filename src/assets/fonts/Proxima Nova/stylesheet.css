@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('./Web\ Fonts/bf9f5d50c1b928ff21436517a1a95ad9.eot');
+    src: url('./Web\ Fonts/bf9f5d50c1b928ff21436517a1a95ad9.eot?#iefix') format('embedded-opentype'),
+        url('./Web\ Fonts/bf9f5d50c1b928ff21436517a1a95ad9.woff2') format('woff2'),
+        url('./Web\ Fonts/bf9f5d50c1b928ff21436517a1a95ad9.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

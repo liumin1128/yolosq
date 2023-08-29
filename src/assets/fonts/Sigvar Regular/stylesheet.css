@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Sigvar Regular';
+    src: url('./Web\ Fonts/40f9de7cc2bcbc6428e47487a382f664.eot');
+    src: url('./Web\ Fonts/40f9de7cc2bcbc6428e47487a382f664.eot?#iefix') format('embedded-opentype'),
+        url('./Web\ Fonts/40f9de7cc2bcbc6428e47487a382f664.woff2') format('woff2'),
+        url('./Web\ Fonts/40f9de7cc2bcbc6428e47487a382f664.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sigvar Serial';
+  src: url('./Web\ Fonts/40f9de7cc2bcbc6428e47487a382f664.eot');
+  src: url('./Web\ Fonts/40f9de7cc2bcbc6428e47487a382f664.eot?#iefix') format('embedded-opentype'),
+      url('./Web\ Fonts/40f9de7cc2bcbc6428e47487a382f664.woff2') format('woff2'),
+      url('./Web\ Fonts/40f9de7cc2bcbc6428e47487a382f664.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
