@@ -53,7 +53,7 @@ const Home: React.FunctionComponent = () => {
           if (navigator.serviceWorker.controller) {
             navigator.serviceWorker.controller.postMessage({
               command: 'oneWayCommunication',
-              message: 'Hi, SW',
+              message: 'Hi, message from YoloSQ',
             });
           }
         }}
