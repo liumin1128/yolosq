@@ -26,18 +26,8 @@ const Home: React.FunctionComponent = () => {
       <Button
         onClick={() => {
           navigator.serviceWorker.register('sw.js').then((registration) => {
-            console.log('registration');
-            console.log(registration);
-            sw = registration;
-            const customEvent = new CustomEvent('test1', {
-              bubbles: true,
-              cancelable: true,
-              detail: {
-                message: 'This is a custom event',
-              },
-            });
-            registration.dispatchEvent(customEvent);
             Notification.requestPermission().then((status) => {
+              window.location.reload();
               //   if (status === 'granted') {
               //     registration.showNotification('title');
               //   }
