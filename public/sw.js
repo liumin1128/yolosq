@@ -1,21 +1,20 @@
-self.addEventListener('test1', async (event) => {
-  console.log('test1');
-  console.log('test1');
+self.addEventListener('message', function (event) {
+  console.log('event');
+  console.log(event);
+  var data = event.data;
+  if (data.command == 'oneWayCommunication') {
+    self.registration.showNotification(data.message);
 
-  self.registration.showNotification('test1');
-
-  await Notification.requestPermission();
-  alert(window.Notification.permission);
-
-  new Notification('提示', { body: 'test' });
+    console.log('Message from the Page : ', data.message);
+  }
 });
 
-self.onactivate = () => self.registration.showNotification('bar');
+// self.onactivate = () => self.registration.showNotification('bar');
 
 self.addEventListener('install', async (event) => {
   console.log('install');
 
-  setTimeout(() => {
-    self.registration.showNotification('bar');
-  }, 3000);
+  // setTimeout(() => {
+  //   self.registration.showNotification('bar');
+  // }, 3000);
 });

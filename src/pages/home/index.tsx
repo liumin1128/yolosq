@@ -12,6 +12,8 @@ import FlightCard from '@/components/FlightCard';
 import MarketingAirlineCodeSQIcon from '@/components/FlightCard/sq.svg';
 import MarketingAirlineCodeScootIcon from '@/components/FlightCard/scoot.svg';
 
+let sw;
+
 const Home: React.FunctionComponent = () => {
   console.log('x x x');
   console.log('x x x');
@@ -24,6 +26,17 @@ const Home: React.FunctionComponent = () => {
       <Button
         onClick={() => {
           navigator.serviceWorker.register('sw.js').then((registration) => {
+            console.log('registration');
+            console.log(registration);
+            sw = registration;
+            const customEvent = new CustomEvent('test1', {
+              bubbles: true,
+              cancelable: true,
+              detail: {
+                message: 'This is a custom event',
+              },
+            });
+            registration.dispatchEvent(customEvent);
             Notification.requestPermission().then((status) => {
               //   if (status === 'granted') {
               //     registration.showNotification('title');
@@ -36,14 +49,13 @@ const Home: React.FunctionComponent = () => {
       </Button>
       <Button
         onClick={() => {
-          const customEvent = new CustomEvent('test1', {
-            bubbles: true,
-            cancelable: true,
-            detail: {
-              message: 'This is a custom event',
-            },
-          });
-          navigator.serviceWorker.dispatchEvent(customEvent);
+          console.log(navigator.serviceWorker.controller);
+          if (navigator.serviceWorker.controller) {
+            navigator.serviceWorker.controller.postMessage({
+              command: 'oneWayCommunication',
+              message: 'Hi, SW',
+            });
+          }
         }}
       >
         Sent Notification
