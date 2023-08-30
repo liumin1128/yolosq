@@ -216,7 +216,7 @@ const App: React.FunctionComponent = () => {
             <Box sx={{ paddingTop: 1, paddingBottom: 0, paddingLeft: 1.5, paddingRight: 1.5 }}>
 
               <p>
-                <MuiLink href="https://www.baidu.com">View other conditions></MuiLink>
+                <MuiLink href="https://www.baidu.com">View other conditions&gt;</MuiLink>
               </p>
             </Box>
           </Stack>
