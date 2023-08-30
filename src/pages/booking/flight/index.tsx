@@ -26,9 +26,6 @@ const Home = () => {
           { key: ' Singapore Airlines', label: ' Singapore Airlines' },
           { key: 'Star Alliance', label: 'Star Alliance' },
           { key: 'Other Partners', label: 'Other Partners' },
-          { key: 'Tab Label1', label: 'Tab Label' },
-          { key: 'Tab Label2', label: 'Tab Label' },
-          { key: 'Tab Label3', label: 'Tab Label' },
         ]}
         onChange={(value) => {
           console.log(value);
@@ -100,6 +97,7 @@ const Home = () => {
               arrivalAirportCode="SFO"
               flightNo="SQ 32"
               price={88000}
+              needWait={true}
             />
 
             <FlightCard
@@ -112,6 +110,8 @@ const Home = () => {
               arrivalAirportCode="SFO"
               flightNo="SQ 32"
               price={88000}
+              needWait={true}
+              waitlistStatus='yellow'
             />
 
             <FlightCard
@@ -124,6 +124,8 @@ const Home = () => {
               arrivalAirportCode="SFO"
               flightNo="SQ 32"
               price={88000}
+              needWait={true}
+              waitlistStatus='Red'
             />
           </Stack>
         </Box>

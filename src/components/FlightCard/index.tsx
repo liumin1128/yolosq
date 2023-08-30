@@ -7,6 +7,8 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import MarketingAirlineCodeSQIcon from './sq.svg';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import Stack from '@mui/material/Stack';
+import ColoredDot from '../Widget/ColoredDot';
 
 interface Props {
   duration: number;
@@ -21,6 +23,8 @@ interface Props {
   flightNo: string;
   airlineCode: string;
   price: number;
+  needWait: boolean;
+  waitlistStatus: string;
 }
 
 const getDuration = (durationInSeconds: number) => {
@@ -44,6 +48,8 @@ const FlightCard = (props: Props) => {
     arrivalAirportCode,
     flightNo,
     price,
+    needWait = false,
+    waitlistStatus = "Green"
   } = props;
   return (
     <Card>
@@ -227,6 +233,15 @@ const FlightCard = (props: Props) => {
               alignItems: 'center',
             }}
           >
+            {
+              needWait&&<Stack spacing={2} sx={{ p: 0 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <Typography sx={{ margin: '0 1px', fontFamily: 'Proxima Nova', fontSize: '14px', fontWeight: 400, lineHeight: '17px', color: '#FF9F00', }}>
+                    Waitlist</Typography>
+                  <ColoredDot color={waitlistStatus} />
+                </Box>
+              </Stack>
+            }
             <Typography
               sx={{
                 fontFamily: 'Proxima Nova',
