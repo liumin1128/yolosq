@@ -12,9 +12,7 @@ import FlightCard from '@/components/FlightCard';
 import MarketingAirlineCodeSQIcon from '@/components/FlightCard/sq.svg';
 import MarketingAirlineCodeScootIcon from '@/components/FlightCard/scoot.svg';
 
-let sw;
-
-const Home: React.FunctionComponent = () => {
+const Home = () => {
   console.log('x x x');
   console.log('x x x');
   console.log('x x x');
@@ -23,33 +21,6 @@ const Home: React.FunctionComponent = () => {
 
   return (
     <div>
-      <Button
-        onClick={() => {
-          navigator.serviceWorker.register('sw.js').then((registration) => {
-            Notification.requestPermission().then((status) => {
-              window.location.reload();
-              //   if (status === 'granted') {
-              //     registration.showNotification('title');
-              //   }
-            });
-          });
-        }}
-      >
-        register serviceWorker
-      </Button>
-      <Button
-        onClick={() => {
-          console.log(navigator.serviceWorker.controller);
-          if (navigator.serviceWorker.controller) {
-            navigator.serviceWorker.controller.postMessage({
-              command: 'oneWayCommunication',
-              message: 'Hi, message from YoloSQ',
-            });
-          }
-        }}
-      >
-        Sent Notification
-      </Button>
       <Tabs
         options={[
           { key: ' Singapore Airlines', label: ' Singapore Airlines' },
@@ -63,11 +34,11 @@ const Home: React.FunctionComponent = () => {
           console.log(value);
         }}
       />
+
       <Stack spacing={1} sx={{ p: 1 }}>
         <Box sx={{ px: 1.5, py: 1 }}>
           <Typography variant="h5">Singapore to Hong Kong</Typography>
         </Box>
-
         <Box>
           <CarbinClassSelect
             list={[
@@ -104,8 +75,33 @@ const Home: React.FunctionComponent = () => {
             </Link>
           </Box>
         </Card>
+
         <Box>
           <Stack spacing={1}>
+            <FlightCard
+              duration={0}
+              departureTime="10:25"
+              arrivalTime="06:35"
+              departureDate="2023-11-01"
+              arrivalDate="2023-12-01"
+              departureAirportCode="SIN"
+              arrivalAirportCode="SFO"
+              flightNo="SQ 32"
+              price={88000}
+            />
+
+            <FlightCard
+              duration={0}
+              departureTime="10:25"
+              arrivalTime="06:35"
+              departureDate="2023-11-01"
+              arrivalDate="2023-12-01"
+              departureAirportCode="SIN"
+              arrivalAirportCode="SFO"
+              flightNo="SQ 32"
+              price={88000}
+            />
+
             <FlightCard
               duration={0}
               departureTime="10:25"
@@ -162,6 +158,15 @@ const Home: React.FunctionComponent = () => {
           </Typography>
         </Box>
       </Stack>
+      {/*
+
+
+
+
+
+
+
+      */}
     </div>
   );
 };

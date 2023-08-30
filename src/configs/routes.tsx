@@ -54,12 +54,18 @@ export default [
             title: 'Home',
             exact: true,
           },
-          // {
-          //   path: '/offer/detail',
-          //   component: '@/pages/booking/offer/detail',
-          //   title: 'Home',
-          //   exact: true,
-          // },
+          {
+            path: '/booking/offer/detail',
+            component: '@/pages/booking/offer/detail',
+            title: 'Home',
+            exact: true,
+          },
+          {
+            path: '/booking/flight',
+            component: '@/pages/booking/flight',
+            title: 'Home',
+            exact: true,
+          },
         ],
       },
 
