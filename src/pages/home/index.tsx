@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { history } from 'umi';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -125,6 +126,10 @@ const list = [
   },
 ];
 const Home: React.FunctionComponent = () => {
+  const handleClick = () => {
+    console.log('handleClick');
+    history.push('/booking/offer/list');
+  };
   return (
     <div>
       <Stack sx={{ p: 1 }} spacing={1}>
@@ -191,7 +196,9 @@ const Home: React.FunctionComponent = () => {
             {list.map((item) => {
               return (
                 <Grid key={item.key} item xs={6}>
-                  <DestinationCard {...item} />
+                  <Card onClick={handleClick}>
+                    <DestinationCard {...item} />
+                  </Card>
                 </Grid>
               );
             })}

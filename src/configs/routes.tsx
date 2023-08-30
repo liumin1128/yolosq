@@ -44,6 +44,26 @@ export default [
       },
 
       {
+        path: '/booking',
+        component: '@/layouts/appbar',
+
+        routes: [
+          {
+            path: '/booking/offer/list',
+            component: '@/pages/booking/offer/list',
+            title: 'Home',
+            exact: true,
+          },
+          // {
+          //   path: '/offer/detail',
+          //   component: '@/pages/booking/offer/detail',
+          //   title: 'Home',
+          //   exact: true,
+          // },
+        ],
+      },
+
+      {
         path: '/403',
         component: '@/pages/403',
       },

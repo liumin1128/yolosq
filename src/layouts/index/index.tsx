@@ -40,17 +40,34 @@ const list = [
 
 export default function FixedBottomNavigation() {
   const [value, setValue] = React.useState(0);
-  const ref = React.useRef<HTMLDivElement>(null);
-
-  React.useEffect(() => {
-    (ref.current as HTMLDivElement).ownerDocument.body.scrollTop = 0;
-  }, [value]);
 
   return (
-    <Box sx={{ pb: 7 }} ref={ref}>
-      <Outlet />
+    <Box
+      sx={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        alignItems: 'flex-start',
+        flexDirection: 'column',
+      }}
+    >
+      <Box
+        sx={{
+          width: '100%',
+          flex: 1,
+          overflowY: 'auto',
+        }}
+      >
+        <Outlet />
+      </Box>
+
       <Paper
-        sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}
+        sx={{
+          pb: 'env(safe-area-inset-bottom)',
+        }}
         elevation={3}
       >
         <BottomNavigation
@@ -58,8 +75,6 @@ export default function FixedBottomNavigation() {
           value={value}
           onChange={(event, newValue) => {
             setValue(newValue);
-            console.log('newValue');
-            console.log(newValue);
             history.push(list[newValue].path);
           }}
         >
