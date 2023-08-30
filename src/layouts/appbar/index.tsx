@@ -1,12 +1,10 @@
 import * as React from 'react';
-import { Outlet } from 'umi';
-import { history } from 'umi';
+import { Outlet, history } from 'umi';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 const App: React.FunctionComponent = () => {
@@ -51,7 +49,7 @@ const App: React.FunctionComponent = () => {
                 color: (theme) => theme.palette.primary.main,
               }}
             >
-              Adelaide
+              {document.title}
             </Typography>
             <Box sx={{ width: '56px' }}></Box>
           </Toolbar>

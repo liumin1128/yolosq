@@ -51,19 +51,25 @@ export default [
           {
             path: '/booking/offer/list',
             component: '@/pages/booking/offer/list',
-            title: 'Home',
+            title: 'Adelaide',
             exact: true,
           },
           {
             path: '/booking/offer/detail',
             component: '@/pages/booking/offer/detail',
-            title: 'Home',
+            title: 'Adelaide',
             exact: true,
           },
           {
             path: '/booking/flight',
             component: '@/pages/booking/flight',
-            title: 'Home',
+            title: 'Departing Flight',
+            exact: true,
+          },
+          {
+            path: '/booking/calender',
+            component: '@/pages/booking/calender',
+            title: 'Calender',
             exact: true,
           },
         ],
