@@ -23,7 +23,7 @@ interface Props {
   flightNo: string;
   airlineCode: string;
   price: number;
-  needWait: boolean;
+  needWait?: boolean;
   waitlistStatus: string;
 }
 
@@ -49,7 +49,7 @@ const FlightCard = (props: Props) => {
     flightNo,
     price,
     needWait = false,
-    waitlistStatus = "Green"
+    waitlistStatus = 'Green',
   } = props;
   return (
     <Card>
@@ -233,21 +233,46 @@ const FlightCard = (props: Props) => {
               alignItems: 'center',
             }}
           >
-            {
-              needWait&&<Stack spacing={2} sx={{ p: 0 }}>
+            {needWait && (
+              <Stack spacing={2} sx={{ p: 0 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <Typography sx={{ margin: '0 1px', fontFamily: 'Proxima Nova', fontSize: '14px', fontWeight: 400, lineHeight: '17px', color: '#FF9F00', }}>
-                    Waitlist</Typography>
-                  <ColoredDot color={waitlistStatus} />
+                  <Box>
+                    <Typography
+                      sx={{
+                        margin: '0 1px',
+                        fontFamily: 'Proxima Nova',
+                        fontSize: '14px',
+                        fontWeight: 400,
+                        lineHeight: '17px',
+                        color: '#FF9F00',
+                        height: '17px',
+                      }}
+                    >
+                      Waitlist
+                    </Typography>
+                  </Box>
+
+                  <Box
+                    sx={{
+                      pl: 0.5,
+                      height: '17px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <ColoredDot color={waitlistStatus} />
+                  </Box>
                 </Box>
               </Stack>
-            }
+            )}
             <Typography
               sx={{
                 fontFamily: 'Proxima Nova',
                 fontSize: '10px',
                 fontWeight: 400,
                 color: '#666',
+                lineHeight: '20px',
               }}
             >
               1 ADULT FROM
