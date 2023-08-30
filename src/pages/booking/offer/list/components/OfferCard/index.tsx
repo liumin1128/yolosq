@@ -96,12 +96,12 @@ const App = (props: Props) => {
             <Typography
               sx={{ fontSize: '14px', fontWeight: '700', color: '#2c2c2c' }}
             >
-              1 Jan - 13 Feb 2018
+              7 Sep - 13 Sep 2023
             </Typography>
             <Typography
               sx={{ fontSize: '14px', fontWeight: '700', color: '#2c2c2c' }}
             >
-              24 Feb - 28 Mar 2018
+              24 Sep - 28 Sep 2023
             </Typography>
           </Box>
         </Box>
@@ -152,7 +152,7 @@ const App = (props: Props) => {
             <Typography
               sx={{ fontSize: '14px', fontWeight: '700', color: '#2c2c2c' }}
             >
-              31 Dec 2017
+              31 Aug 2023
             </Typography>
           </Box>
         </Box>
