@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
+import { history } from 'umi';
 
 const Home: React.FunctionComponent = () => {
   return (
@@ -32,6 +33,14 @@ const Home: React.FunctionComponent = () => {
         }}
       >
         Sent Notification
+      </Button>
+      <br />
+      <Button
+        onClick={() => {
+          history.push('/booking/calender');
+        }}
+      >
+        Calender
       </Button>
     </div>
   );
