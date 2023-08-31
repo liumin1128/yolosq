@@ -2,6 +2,7 @@ import React from 'react';
 import { history } from 'umi';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 
@@ -9,9 +10,10 @@ import dayjs, { Dayjs } from 'dayjs';
 import Month from './components/Month';
 
 const Home: React.FunctionComponent = () => {
-  const handleClick = () => {
-    history.push('/booking/offer/list');
-  };
+  const [range, setRange] = React.useState<Dayjs[]>([
+    // dayjs(),
+    // dayjs().add(7, 'day'),
+  ]);
 
   const currentMonth = dayjs().format('YYYY-MM');
   const months = [];
@@ -19,9 +21,25 @@ const Home: React.FunctionComponent = () => {
     months.push(dayjs(currentMonth).add(i, 'month').format('YYYY-MM'));
   }
 
+  const handleClick = (value) => {
+    if (range.length === 0) {
+      setRange([value]);
+    } else if (range.length === 1) {
+      setRange([...range, value]);
+    } else {
+      setRange([value]);
+    }
+
+    // if (range[0].isAfter(value)) {
+    //   setRange([value]);
+    // } else {
+    //   setRange([range[0], value]);
+    // }
+  };
+
   return (
-    <div>
-      <Stack sx={{ p: 1 }} spacing={1}>
+    <Stack sx={{ p: 1, display: 'flex', height: '100%' }} spacing={1}>
+      <Box>
         <Card>
           <Box sx={{ display: 'flex' }}>
             <Box
@@ -35,7 +53,11 @@ const Home: React.FunctionComponent = () => {
               }}
             >
               <Typography
-                sx={{ textAlign: 'center', fontSize: '14px', fontWeight: 400 }}
+                sx={{
+                  textAlign: 'center',
+                  fontSize: '14px',
+                  fontWeight: 400,
+                }}
               >
                 Departure Date
               </Typography>
@@ -47,7 +69,7 @@ const Home: React.FunctionComponent = () => {
                   color: (theme) => theme.palette.primary.main,
                 }}
               >
-                1 Nov 2022
+                {range[0]?.format('D MMM YYYY') || 'Select Date'}
               </Typography>
             </Box>
             <Box sx={{ width: '1px', backgroundColor: '#e6e6e6' }} />
@@ -62,7 +84,11 @@ const Home: React.FunctionComponent = () => {
               }}
             >
               <Typography
-                sx={{ textAlign: 'center', fontSize: '14px', fontWeight: 400 }}
+                sx={{
+                  textAlign: 'center',
+                  fontSize: '14px',
+                  fontWeight: 400,
+                }}
               >
                 Return Date
               </Typography>
@@ -74,19 +100,33 @@ const Home: React.FunctionComponent = () => {
                   color: (theme) => theme.palette.primary.main,
                 }}
               >
-                2 Nov 2022
+                {range[1]?.format('D MMM YYYY') || 'Select Date'}
               </Typography>
             </Box>
           </Box>
         </Card>
+      </Box>
 
-        <Stack sx={{ p: 1 }} spacing={4}>
+      <Box sx={{ p: 1, flex: 1, overflow: 'auto' }}>
+        <Stack spacing={4}>
           {months.map((month) => {
-            return <Month key={month} month={month} />;
+            return (
+              <Month
+                range={range}
+                // range={[dayjs('2023-08-14'), dayjs('2023-08-28')]}
+                key={month}
+                month={month}
+                onClick={handleClick}
+              />
+            );
           })}
         </Stack>
-      </Stack>
-    </div>
+      </Box>
+
+      <Button variant="contained" fullWidth sx={{ height: '56px' }}>
+        NEXT
+      </Button>
+    </Stack>
   );
 };
 
