@@ -39,7 +39,7 @@ const Month = (props: MonthProps) => {
       key: i,
     });
   }
-  for (let i = 1; i <= dayjs().daysInMonth(); i += 1) {
+  for (let i = 1; i <= dayjs(month).daysInMonth(); i += 1) {
     days.push({
       key: firstDayOfWeek + i,
       label: i,
