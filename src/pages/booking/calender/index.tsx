@@ -25,7 +25,11 @@ const Home: React.FunctionComponent = () => {
     if (range.length === 0) {
       setRange([value]);
     } else if (range.length === 1) {
-      setRange([...range, value]);
+      if (range[0].isAfter(value)) {
+        setRange([value]);
+      } else {
+        setRange([...range, value]);
+      }
     } else {
       setRange([value]);
     }
@@ -123,7 +127,14 @@ const Home: React.FunctionComponent = () => {
         </Stack>
       </Box>
 
-      <Button variant="contained" fullWidth sx={{ height: '56px' }}>
+      <Button
+        variant="contained"
+        fullWidth
+        sx={{ height: '56px' }}
+        onClick={() => {
+          history.back();
+        }}
+      >
         NEXT
       </Button>
     </Stack>
