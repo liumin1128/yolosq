@@ -67,6 +67,7 @@ export default function FixedBottomNavigation() {
       <Paper
         sx={{
           pb: 'env(safe-area-inset-bottom)',
+          width: '100%',
         }}
         elevation={3}
       >
@@ -77,6 +78,7 @@ export default function FixedBottomNavigation() {
             setValue(newValue);
             history.push(list[newValue].path);
           }}
+          sx={{ width: '100%' }}
         >
           {list.map((i, index) => {
             return (
