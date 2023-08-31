@@ -168,8 +168,9 @@ const Month = (props: MonthProps) => {
                     ...style2,
                   }}
                   onClick={() => {
-                    console.log(day.day);
-                    onClick(day?.day);
+                    if (day?.day) {
+                      onClick(day?.day);
+                    }
                   }}
                 >
                   <Typography
