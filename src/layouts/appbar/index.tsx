@@ -21,7 +21,7 @@ const App: React.FunctionComponent = () => {
         flexDirection: 'column',
       }}
     >
-      <Box sx={{ width: '100%' }}>
+      <Box sx={{ width: '100%', zIndex: 99 }}>
         <AppBar
           position="static"
           color="default"
@@ -61,6 +61,7 @@ const App: React.FunctionComponent = () => {
           width: '100%',
           flex: 1,
           overflowY: 'auto',
+          zIndex: 1,
         }}
       >
         <Outlet />
