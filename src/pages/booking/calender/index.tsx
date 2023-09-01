@@ -132,7 +132,7 @@ const Home: React.FunctionComponent = () => {
         fullWidth
         sx={{ height: '56px' }}
         onClick={() => {
-          history.back();
+          history.push('/booking/offer/list');
         }}
       >
         NEXT

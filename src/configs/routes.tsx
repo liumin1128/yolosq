@@ -69,7 +69,7 @@ export default [
           {
             path: '/booking/calender',
             component: '@/pages/booking/calender',
-            title: 'Calender',
+            title: 'Adelaide',
             exact: true,
           },
         ],

@@ -128,7 +128,7 @@ const list = [
 const Home: React.FunctionComponent = () => {
   const handleClick = () => {
     console.log('handleClick');
-    history.push('/booking/offer/list');
+    history.push('/booking/calender');
   };
   return (
     <div>
