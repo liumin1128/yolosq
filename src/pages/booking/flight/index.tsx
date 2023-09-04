@@ -21,16 +21,18 @@ const Home = () => {
 
   return (
     <div>
-      <Tabs
-        options={[
-          { key: ' Singapore Airlines', label: ' Singapore Airlines' },
-          { key: 'Star Alliance', label: 'Star Alliance' },
-          { key: 'Other Partners', label: 'Other Partners' },
-        ]}
-        onChange={(value) => {
-          console.log(value);
-        }}
-      />
+      <Card>
+        <Tabs
+          options={[
+            { key: ' Singapore Airlines', label: ' Singapore Airlines' },
+            { key: 'Star Alliance', label: 'Star Alliance' },
+            { key: 'Other Partners', label: 'Other Partners' },
+          ]}
+          onChange={(value) => {
+            console.log(value);
+          }}
+        />
+      </Card>
 
       <Stack spacing={1} sx={{ p: 1 }}>
         <Box sx={{ px: 1.5, py: 1 }}>
@@ -111,7 +113,7 @@ const Home = () => {
               flightNo="SQ 32"
               price={88000}
               needWait={true}
-              waitlistStatus='yellow'
+              waitlistStatus="yellow"
             />
 
             <FlightCard
@@ -125,7 +127,7 @@ const Home = () => {
               flightNo="SQ 32"
               price={88000}
               needWait={true}
-              waitlistStatus='Red'
+              waitlistStatus="Red"
             />
           </Stack>
         </Box>

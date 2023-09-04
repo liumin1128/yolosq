@@ -25,7 +25,7 @@ export default [
           {
             path: '/home/trip',
             component: '@/pages/trip',
-            title: 'Home',
+            title: 'My Trips',
             exact: true,
           },
           {
