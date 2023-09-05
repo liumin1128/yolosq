@@ -15,11 +15,65 @@ import WorkIcon from '@mui/icons-material/Work';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import IconButton from '@mui/material/IconButton';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import Alert from '@mui/material/Alert';
+import SvgIcon from '@mui/material/SvgIcon';
+import DateChangeIcon from '@/assets/icon/Date-change.svg';
+import UpgradeMilesIcon from '@/assets/icon/Upgrade-miles.svg';
+import PriorityIcon from '@/assets/icon/Priority.svg';
+import NoShowsIcon from '@/assets/icon/No-shows.svg';
+import ActiveIcon from '@/assets/icon/Active.svg';
+
+const list = [
+  {
+    key: 'Change Date',
+    label: 'Change Date',
+    subLabel: 'Get confirm booking now',
+    icon: DateChangeIcon,
+    onClick: () => {
+      console.log('change date');
+    },
+  },
+  {
+    key: 'Upgrade to Advantage',
+    label: 'Upgrade to Advantage',
+    subLabel: 'Higher chance of redemption',
+    icon: UpgradeMilesIcon,
+  },
+  {
+    key: 'KF Escapes',
+    label: 'KF Escapes',
+    subLabel: '30% Off for October Flight Redemption ',
+    icon: ActiveIcon,
+  },
+  {
+    key: 'Request a Callback',
+    label: 'Request a Callback',
+    subLabel: 'Check Latest Flight Promotion',
+    icon: PriorityIcon,
+  },
+  {
+    key: 'Kris Recommends (Coming Soon)',
+    label: 'Kris Recommends (Coming Soon)',
+    subLabel: 'SQ Smart Recommendations ',
+    icon: ActiveIcon,
+  },
+  {
+    key: 'Fare Deals',
+    label: 'Fare Deals',
+    subLabel: 'Check Latest Flight Promotion',
+    icon: ActiveIcon,
+  },
+  {
+    key: 'Cancel Waitlist',
+    label: 'Cancel Waitlist',
+    icon: NoShowsIcon,
+  },
+];
 
 const Home: React.FunctionComponent = () => {
   return (
     <Box>
-      <Box sx={{ width: '100%', p: 1 }}>
+      <Box sx={{ width: '100%', p: 1, pb: 0 }}>
         <Typography
           sx={{
             fontSize: '14px',
@@ -78,24 +132,18 @@ const Home: React.FunctionComponent = () => {
                 <ColoredDot color="green" />
               </Stack>
 
-              <Progress value={0.33} />
-
-              <Typography
-                sx={{
-                  fontSize: '14px',
-                  fontWeight: '400',
-                  color: '#2c2c2c',
-                }}
-              >
-                Your Waitlisted Booking will automatically be cancelled in{' '}
-                <span style={{ fontWeight: '700' }}>5 Days</span>.
-              </Typography>
+              <Alert severity="warning">
+                Booking will automatically be cancelled in{' '}
+                <span style={{ fontWeight: 700 }}>30 Days</span>. Check our
+                recommendations below.
+              </Alert>
 
               <Typography
                 sx={{
                   fontSize: '10px',
                   fontWeight: '400',
                   color: '#2c2c2c',
+                  fontStyle: 'italic',
                 }}
               >
                 Disclaimer: Redemption booking waitlist status does not
@@ -120,48 +168,19 @@ const Home: React.FunctionComponent = () => {
           <List
             sx={{
               width: '100%',
-              maxWidth: 360,
               bgcolor: 'background.paper',
             }}
           >
-            {[
-              {
-                key: 'Change Date',
-                label: 'Change Date',
-                subLabel: 'Find available date for same class',
-              },
-              {
-                key: 'Upgrade to Advantage',
-                label: 'Upgrade to Advantage',
-                subLabel: 'Check Availability for Saver Advantage',
-              },
-              {
-                key: 'KF Escapes',
-                label: 'KF Escapes',
-                subLabel: '30% Off Flight Redemption',
-              },
-              {
-                key: 'Fare Deals',
-                label: 'Fare Deals',
-                subLabel: 'Check Latest Flight Promotion',
-              },
-              {
-                key: 'Cancel Waitlist',
-                label: 'Cancel Waitlist',
-              },
-            ].map((i) => {
+            {list.map((i) => {
               return (
                 <ListItem
                   key={i.key}
                   divider
-                  secondaryAction={
-                    <IconButton edge="end" aria-label="delete">
-                      <ChevronRightIcon />
-                    </IconButton>
-                  }
+                  secondaryAction={<ChevronRightIcon />}
+                  onClick={i.onClick}
                 >
                   <ListItemAvatar>
-                    <ImageIcon />
+                    <img src={i.icon} alt="" />
                   </ListItemAvatar>
                   <ListItemText primary={i.label} secondary={i.subLabel} />
                 </ListItem>

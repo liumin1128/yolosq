@@ -149,6 +149,7 @@ const Home: React.FunctionComponent = () => {
                 {[1, 2, 3].map((i) => {
                   return (
                     <Box
+                      key={i}
                       sx={{
                         width: '100%',
                         // border: '1px red solid',
@@ -330,7 +331,14 @@ const Home: React.FunctionComponent = () => {
                 <ColoredDot color="green" />
               </Stack>
 
-              <Button variant="contained" fullWidth sx={{ height: '60px' }}>
+              <Button
+                variant="contained"
+                fullWidth
+                sx={{ height: '60px' }}
+                onClick={() => {
+                  history.push('/booking/manager');
+                }}
+              >
                 Check Status
               </Button>
             </Box>
