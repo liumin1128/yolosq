@@ -267,7 +267,14 @@ const Home: React.FunctionComponent = () => {
                 </Typography>
               </Box>
 
-              <Button variant="contained" fullWidth sx={{ height: '60px' }}>
+              <Button
+                variant="contained"
+                fullWidth
+                sx={{ height: '60px' }}
+                onClick={() => {
+                  history.push('/booking/manager');
+                }}
+              >
                 MANAGE BOOKING
               </Button>
             </Box>

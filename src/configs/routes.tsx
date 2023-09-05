@@ -72,6 +72,12 @@ export default [
             title: 'Adelaide',
             exact: true,
           },
+          {
+            path: '/booking/manager',
+            component: '@/pages/booking/manager',
+            title: 'My Trips',
+            exact: true,
+          },
         ],
       },
 
