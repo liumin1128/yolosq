@@ -78,6 +78,12 @@ export default [
             title: 'My Trips',
             exact: true,
           },
+          {
+            path: '/booking/schedule',
+            component: '@/pages/booking/schedule',
+            title: 'My Trips',
+            exact: true,
+          },
         ],
       },
 

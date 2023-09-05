@@ -1,4 +1,5 @@
 import React from 'react';
+import { history } from 'umi';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
@@ -30,7 +31,7 @@ const list = [
     subLabel: 'Get confirm booking now',
     icon: DateChangeIcon,
     onClick: () => {
-      console.log('change date');
+      history.push('/booking/schedule');
     },
   },
   {
