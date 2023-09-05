@@ -88,7 +88,7 @@ export default [
 
       {
         path: '/',
-        redirect: '/home',
+        redirect: '/home/trip',
       },
     ],
   },
