@@ -39,6 +39,9 @@ const list = [
     label: 'Upgrade to Advantage',
     subLabel: 'Higher chance of redemption',
     icon: UpgradeMilesIcon,
+    onClick: () => {
+      history.push('/booking/flight');
+    },
   },
   {
     key: 'KF Escapes',
@@ -63,6 +66,9 @@ const list = [
     label: 'Fare Deals',
     subLabel: 'Check Latest Flight Promotion',
     icon: ActiveIcon,
+    onClick: () => {
+      history.push('/booking/fare');
+    },
   },
   {
     key: 'Cancel Waitlist',

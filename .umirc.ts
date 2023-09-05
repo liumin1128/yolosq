@@ -6,7 +6,7 @@ export default {
   publicPath: '/',
   npmClient: 'pnpm',
   history: { type: 'hash' },
-  favicons: ['/favicon/4.svg', '/favicon/4.ico'],
+  favicons: ['/favicon/sq.svg', '/favicon/sq.ico'],
   esbuildMinifyIIFE: true,
 
   metas: [
