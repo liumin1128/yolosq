@@ -62,6 +62,9 @@ const App: React.FunctionComponent = () => {
           flex: 1,
           overflowY: 'auto',
           zIndex: 1,
+
+          maxWidth: '600px',
+          margin: 'auto',
         }}
       >
         <Outlet />
