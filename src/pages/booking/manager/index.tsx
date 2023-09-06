@@ -48,6 +48,9 @@ const list = [
     label: 'KF Escapes',
     subLabel: '30% Off for October Flight Redemption ',
     icon: ActiveIcon,
+    onClick: () => {
+      history.push('/booking/map');
+    },
   },
   {
     key: 'Request a Callback',

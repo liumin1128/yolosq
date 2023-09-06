@@ -90,6 +90,12 @@ export default [
             title: 'My Trips',
             exact: true,
           },
+          {
+            path: '/booking/map',
+            component: '@/pages/booking/map',
+            title: 'My Trips',
+            exact: true,
+          },
         ],
       },
 
