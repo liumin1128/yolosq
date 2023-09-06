@@ -59,12 +59,6 @@ const list = [
     icon: PriorityIcon,
   },
   {
-    key: 'Kris Recommends (Coming Soon)',
-    label: 'Kris Recommends (Coming Soon)',
-    subLabel: 'SQ Smart Recommendations ',
-    icon: ActiveIcon,
-  },
-  {
     key: 'Fare Deals',
     label: 'Fare Deals',
     subLabel: 'Check Latest Flight Promotion',
@@ -72,6 +66,12 @@ const list = [
     onClick: () => {
       history.push('/booking/fare');
     },
+  },
+  {
+    key: 'Kris Recommends (Coming Soon)',
+    label: 'Kris Recommends (Coming Soon)',
+    subLabel: 'SQ Smart Recommendations ',
+    icon: ActiveIcon,
   },
   {
     key: 'Cancel Waitlist',
@@ -139,7 +139,7 @@ const Home: React.FunctionComponent = () => {
                   Waitlisted (Economy Saver)
                 </Typography>
 
-                <ColoredDot color="green" />
+                <ColoredDot color="red" />
               </Stack>
 
               <Alert severity="warning">

@@ -336,7 +336,7 @@ const Home: React.FunctionComponent = () => {
                   Waitlisted
                 </Typography>
 
-                <ColoredDot color="green" />
+                <ColoredDot color="red" />
               </Stack>
 
               <Button
