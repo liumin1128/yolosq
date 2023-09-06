@@ -16,7 +16,7 @@ const Home: React.FunctionComponent = () => {
         flexDirection: 'column',
       }}
     >
-      <Box sx={{ width: '100%', flex: 1 }}>
+      <Box sx={{ width: '100%', flex: 1, overflow: 'auto' }}>
         <Box sx={{ p: 2 }}>
           <Typography
             sx={{
@@ -36,9 +36,7 @@ const Home: React.FunctionComponent = () => {
             }}
           >
             Waitlist status are indicated in 3 different colours according to
-            number of passengers in the waitlist. The more passenger in the
-            waitlist the lower of chances of getting confirmation. You may refer
-            to our Redemption booking terms and conditions.
+            number of passengers in the waitlist.
           </Typography>
         </Box>
 
@@ -53,13 +51,13 @@ const Home: React.FunctionComponent = () => {
             >
               <Box
                 sx={{
-                  width: 130,
+                  width: 140,
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'flex-start',
                   flexDirection: 'column',
                   px: 2,
-                  height: 120,
+                  height: 100,
                   background: current === i ? '#ddd' : '#f1f1f1',
                 }}
               >
@@ -91,7 +89,7 @@ const Home: React.FunctionComponent = () => {
                   alignItems: 'center',
                   flexDirection: 'column',
                   px: 2,
-                  height: 120,
+                  height: 100,
                   color: current === i ? '#fff' : 'inherit',
                   background: current === i ? '#00266B' : '#fff',
                 }}

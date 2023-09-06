@@ -20,7 +20,7 @@ interface Props {
 const CarbinClassSelect = (props: Props) => {
   const { list } = props;
 
-  const [currentCarbinClass, setCurrentCarbinClass] = React.useState(0);
+  const [currentCarbinClass, setCurrentCarbinClass] = React.useState(1);
 
   return (
     <Stack spacing={1} direction="row">
