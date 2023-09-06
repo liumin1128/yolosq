@@ -39,7 +39,7 @@ const list = [
 ];
 
 export default function FixedBottomNavigation() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(2);
 
   return (
     <Box

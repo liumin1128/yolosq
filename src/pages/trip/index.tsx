@@ -94,7 +94,15 @@ const Home: React.FunctionComponent = () => {
         </Card>
       </Box>
 
-      <Box sx={{ width: '100%', flex: 1, overflow: 'auto' }}>
+      <Box
+        sx={{
+          width: '100%',
+          flex: 1,
+          overflow: 'auto',
+          maxWidth: 600,
+          margin: 'auto',
+        }}
+      >
         <Box sx={{ width: '100%', p: 1 }}>
           <Typography
             sx={{
@@ -166,7 +174,7 @@ const Home: React.FunctionComponent = () => {
                           textAlign: 'center',
                         }}
                       >
-                        Trip to San Francisc
+                        Trip to Bangkok
                       </Typography>
 
                       <Typography
@@ -536,7 +544,7 @@ const Home: React.FunctionComponent = () => {
                     color: '#AF8F62',
                   }}
                 >
-                  SFO
+                  BKK
                 </Typography>
               </Box>
 
@@ -557,7 +565,7 @@ const Home: React.FunctionComponent = () => {
                     color: '#2c2c2c',
                   }}
                 >
-                  San Francisco
+                  Bangkok
                 </Typography>
               </Box>
 
@@ -579,7 +587,7 @@ const Home: React.FunctionComponent = () => {
                     textAlign: 'right',
                   }}
                 >
-                  San Francisco <br />
+                  Bangkok <br />
                   Intl Terminal I
                 </Typography>
               </Box>
